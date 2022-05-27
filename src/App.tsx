@@ -1,10 +1,12 @@
 import React from 'react';
-import { Text } from 'react-native';
 import { AppNavigator } from './navigation';
+import { UIProvider } from './UIProvider';
 
 export const App = () => {
 
     return (
-        <AppNavigator />
+        <UIProvider>
+            <AppNavigator />
+        </UIProvider>
     )
 }

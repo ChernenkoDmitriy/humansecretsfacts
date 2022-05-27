@@ -16,7 +16,7 @@ export const AppNavigator: FC = () => {
             <StatusBar backgroundColor={'#000'} />
             <NavigationContainer theme={{ colors: {} } as any}>
                 <Stack.Navigator screenOptions={{ headerShown: false }}>
-                    <Stack.Screen name="MAIN" component={MainScreen} initialParams={{ screenName: "main" }} />
+                    <Stack.Screen name="MAIN" component={MainScreen} />
                     <Stack.Screen name="RECENTLY_READ" component={FactScreen} initialParams={{ screenName: "RECENTLY_READ" }} />
                     <Stack.Screen name="ALL_FACTS" component={FactsListScreen} initialParams={{ screenName: "ALL_FACTS" }} />
                     <Stack.Screen name="UNREAD_FACTS" component={FactsListScreen} initialParams={{ screenName: "UNREAD_FACTS" }} />
