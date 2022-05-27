@@ -1,9 +1,10 @@
 import React from 'react';
 import { Text } from 'react-native';
+import { AppNavigator } from './navigation';
 
 export const App = () => {
 
     return (
-        <Text>humansecretsfacts</Text>
+        <AppNavigator />
     )
 }
