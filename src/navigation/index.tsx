@@ -17,12 +17,9 @@ export const AppNavigator: FC = () => {
             <NavigationContainer theme={{ colors: {} } as any}>
                 <Stack.Navigator screenOptions={{ headerShown: false }}>
                     <Stack.Screen name="MAIN" component={MainScreen} />
-                    <Stack.Screen name="RECENTLY_READ" component={FactScreen} initialParams={{ screenName: "RECENTLY_READ" }} />
-                    <Stack.Screen name="ALL_FACTS" component={FactsListScreen} initialParams={{ screenName: "ALL_FACTS" }} />
-                    <Stack.Screen name="UNREAD_FACTS" component={FactsListScreen} initialParams={{ screenName: "UNREAD_FACTS" }} />
-                    <Stack.Screen name="READ_FACTS" component={FactsListScreen} initialParams={{ screenName: "READ_FACTS" }} />
-                    <Stack.Screen name="FAVORITES_FACTS" component={FactsListScreen} initialParams={{ screenName: "FAVORITES_FACTS" }} />
-                    <Stack.Screen name="CURRENT_FACT" component={FactScreen} initialParams={{ screenName: "CURRENT_FACT" }} />
+                    <Stack.Screen name="RECENTLY_READ" component={FactScreen} />
+                    <Stack.Screen name="FAVORITES_FACTS" component={FactScreen} />
+                    <Stack.Screen name="CURRENT_FACT" component={FactScreen} />
                     <Stack.Screen name="INFORMATION" component={InformationScreen} />
                 </Stack.Navigator>
             </NavigationContainer>
