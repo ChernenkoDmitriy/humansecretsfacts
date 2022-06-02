@@ -1,67 +1,55 @@
 import { NavigatorScreenParams } from '@react-navigation/native';
 import { StackNavigationProp } from '@react-navigation/stack';
 import { observer } from 'mobx-react';
-import React, { FC, useMemo, useRef, useState } from 'react';
-import { FlatList, SafeAreaView, Text } from 'react-native';
-import { ScrollView } from 'react-native-gesture-handler';
+import React, { FC, useEffect, useMemo, useRef, useState } from 'react';
+import { SafeAreaView } from 'react-native';
+import Carousel from 'react-native-snap-carousel';
+import { IFactsMock } from '../../MOCKS/IFactsMock';
+import { factsModel } from '../../src/entities/facts/facts';
 import { useUiContext } from '../../src/UIProvider';
+import { _size } from '../../src/utils';
 import { AdBanner } from '../components/adBanner';
-import { FactHeader } from '../components/factHeader';
 import { FactItem } from '../components/factItem';
 import { getStyle } from './styles';
 
-const FACTS = [
-    { id: '451', text: 'fact1' },
-    { id: '267', text: 'fact2' },
-    { id: '398', text: 'fact3' },
-    { id: '467', text: 'fact4' },
-    { id: '565', text: 'fact5' },
-]
-
-const viewConfigRef = { viewAreaCoveragePercentThreshold: 95 }
-
 interface IProps {
     navigation: StackNavigationProp<any>;
+    route: NavigatorScreenParams<any>
 }
 
-interface IFacts {
-    id: string,
-    text: string
-}
-
-export const FactScreen: FC<IProps> = observer(({ navigation }) => {
+export const FactScreen: FC<IProps> = observer(({ navigation, route }) => {
     const { colors } = useUiContext();
     const styles = useMemo(() => getStyle(colors), [colors]);
-    const flatListRef = useRef<FlatList<IFacts> | null>()
-    const [currentVisible, setCurrentVisible] = useState(0)
+    const flatListRef = useRef<Carousel<IFactsMock> | null>()
+    const [currentVisible, setCurrentVisible] = useState<number | undefined>(0)
 
-    const onViewRef = useRef(({ changed }: { changed: any }) => {
-        if (changed[0].isViewable) {
-            setCurrentVisible(changed[0].index)
-        }
-    })
+    const index = route.params.index
+    const facts = route.params.facts
 
-    const renderItem = ({ item }: any) => (
-        <FactItem item={item} />
+    const renderItem = ({ item }: { item: IFactsMock }) => (
+        <FactItem item={item} navigation={navigation} facts={facts} currentViewFact={currentVisible} />
     );
+
+    const onSnap = () => {
+        setCurrentVisible(flatListRef.current?.currentIndex)
+        //@ts-ignore
+        factsModel.lastIndex = flatListRef.current?.currentIndex
+        factsModel.currentFactId = facts[flatListRef.current?.currentIndex || 0].id
+    }
 
     return (
         <SafeAreaView style={styles.container}>
-            <FactHeader navigation={navigation} allFacts={FACTS.length} currentViewFact={currentVisible} />
-            <FlatList
-                data={FACTS}
-                renderItem={renderItem}
-                keyExtractor={item => item.id}
-                horizontal
-                showsHorizontalScrollIndicator={false}
-                pagingEnabled
+            <Carousel
                 ref={(ref) => { flatListRef.current = ref }}
-                inverted
-                viewabilityConfig={viewConfigRef}
-                onViewableItemsChanged={onViewRef.current}
+                data={facts}
+                renderItem={renderItem}
+                sliderWidth={_size.width}
+                itemWidth={_size.width}
+                pagingEnabled
+                firstItem={index}
+                onSnapToItem={() => onSnap()}
             />
             <AdBanner />
         </SafeAreaView >
     );
 });
-
