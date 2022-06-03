@@ -26,6 +26,10 @@ export const FactScreen: FC<IProps> = observer(({ navigation, route }) => {
     const index = route.params.index
     const facts = route.params.facts
 
+    useEffect(() => {
+        flatListRef.current?.snapToItem(index)
+    })
+
     const renderItem = ({ item }: { item: IFactsMock }) => (
         <FactItem item={item} navigation={navigation} facts={facts} currentViewFact={currentVisible} />
     );
@@ -46,7 +50,8 @@ export const FactScreen: FC<IProps> = observer(({ navigation, route }) => {
                 sliderWidth={_size.width}
                 itemWidth={_size.width}
                 pagingEnabled
-                initialScrollIndex={index}
+                initialNumToRender={40}
+                firstItem={index}
                 onSnapToItem={() => onSnap()}
             />
             <AdBanner />

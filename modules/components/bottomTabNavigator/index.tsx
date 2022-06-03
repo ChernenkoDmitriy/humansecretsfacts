@@ -22,11 +22,11 @@ export const BottomTabNavigator: FC<IProps> = ({ navigation }) => {
             <TouchableOpacity onPress={() => navigation.navigate('FAVORITES_FACTS', { facts: factsModel.favouriteFacts })}>
                 <Text>FAV</Text>
             </TouchableOpacity>
-            <TouchableOpacity onPress={() => onPress('FAVORITES_FACTS')}>
-                <Text>SET</Text>
-            </TouchableOpacity>
             <TouchableOpacity onPress={() => navigation.navigate('RECENTLY_READ', { facts: factsModel.facts, index: factsModel.lastIndex })}>
                 <Text>LAST</Text>
+            </TouchableOpacity>
+            <TouchableOpacity onPress={() => onPress('SETTINGS')}>
+                <Text>SET</Text>
             </TouchableOpacity>
             <TouchableOpacity onPress={() => onPress('INFORMATION')}>
                 <Text>INFO</Text>
