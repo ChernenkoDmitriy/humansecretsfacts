@@ -1,9 +1,9 @@
-import { isTemplateElement } from '@babel/types';
 import { StackNavigationProp } from '@react-navigation/stack';
 import { observer } from 'mobx-react';
 import React, { FC, useMemo } from 'react';
-import { ScrollView, Text, FlatList, View } from 'react-native';
+import { FlatList, View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
+import { categoryMock } from '../../MOCKS/factsMock';
 import { useUiContext } from '../../src/UIProvider';
 import { AdBanner } from '../components/adBanner';
 import { BottomTabNavigator } from '../components/bottomTabNavigator';
@@ -14,33 +14,20 @@ interface IProps {
     navigation: StackNavigationProp<any>;
 }
 
-const DATA = [
-    { id: '1', title: 1 },
-    { id: '2', title: 2 },
-    { id: '3', title: 3 },
-    { id: '4', title: 4 },
-    { id: '5', title: 5 },
-    { id: '6', title: 6 },
-    { id: '7', title: 7 },
-]
-
 export const MainScreen: FC<IProps> = observer(({ navigation }) => {
     const { colors } = useUiContext();
     const styles = useMemo(() => getStyle(colors), [colors]);
 
     const formatData = (dataList: any[], numColumns: number) => {
-        const totalRows = Math.floor(dataList.length / numColumns);
-        let totalLastRow = dataList.length - (totalRows * numColumns);
-
-        while (totalLastRow !== 0 && totalLastRow !== numColumns) {
+        if (dataList.length % numColumns !== 0) {
             dataList.push({ id: String(dataList.length + 1), title: 'empty', empty: true })
-            totalLastRow++
+            return dataList;
+        } else {
+            return dataList
         }
-
-        return dataList;
     }
 
-    const renderItem = ({ item }: any) => {
+    const renderItem = ({ item }: { item: any }) => {
         if (item.empty) {
             return <View style={styles.emptyItem} />
         }
@@ -51,9 +38,9 @@ export const MainScreen: FC<IProps> = observer(({ navigation }) => {
         <SafeAreaView style={styles.container}>
             <AdBanner />
             <FlatList
-                data={formatData(DATA, 2)}
+                data={formatData(categoryMock, 2)}
                 renderItem={renderItem}
-                keyExtractor={item => item.id}
+                keyExtractor={item => item}
                 numColumns={2}
                 showsVerticalScrollIndicator={false}
             />
