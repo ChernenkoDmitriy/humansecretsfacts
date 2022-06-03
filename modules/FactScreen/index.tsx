@@ -46,7 +46,7 @@ export const FactScreen: FC<IProps> = observer(({ navigation, route }) => {
                 sliderWidth={_size.width}
                 itemWidth={_size.width}
                 pagingEnabled
-                firstItem={index}
+                initialScrollIndex={index}
                 onSnapToItem={() => onSnap()}
             />
             <AdBanner />
