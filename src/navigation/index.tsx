@@ -5,7 +5,9 @@ import { createStackNavigator } from '@react-navigation/stack';
 import { MainScreen } from '../../modules/MainScreen';
 // import { InformationScreen } from '../../modules/InformationScreen';
 import { FactsListScreen } from '../../modules/FactsListScreen';
-import { FactScreen } from '../../modules/FactScreen';
+import { FactScreen } from '../../modules/facts/ui';
+import { SettingsScreen } from '../../modules/SettingsScreen';
+import { InformationScreen } from '../../modules/InformationScreen';
 
 const Stack = createStackNavigator();
 
@@ -20,7 +22,8 @@ export const AppNavigator: FC = () => {
                     <Stack.Screen name="RECENTLY_READ" component={FactScreen} />
                     <Stack.Screen name="FAVORITES_FACTS" component={FactScreen} />
                     <Stack.Screen name="CURRENT_FACT" component={FactScreen} />
-                    <Stack.Screen name="INFORMATION" component={FactScreen} />
+                    <Stack.Screen name="SETTINGS" component={SettingsScreen} />
+                    <Stack.Screen name="INFORMATION" component={InformationScreen} />
                 </Stack.Navigator>
             </NavigationContainer>
         </View>

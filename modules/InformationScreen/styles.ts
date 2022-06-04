@@ -4,7 +4,8 @@ import { IColors } from '../../src/UIProvider/colors/IColorsController';
 export const getStyle = (colors: IColors) => {
     const styles = StyleSheet.create({
         container: {
-            flex: 1
+            flex: 1,
+            backgroundColor: colors.background,
         },
     });
     return styles;
