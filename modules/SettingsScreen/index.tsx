@@ -6,7 +6,7 @@ import { ColorThemeIcon } from '../../assets/colorThemeIcon';
 import { InformationIcon } from '../../assets/informationIcon';
 import { ShareIcon } from '../../assets/shareIcon';
 import { VibrationIcon } from '../../assets/vibrationIcon';
-import { settingsModel } from '../../src/entities/settings/Settings';
+import { settingsModel } from '../shared/entities/settings/Settings';
 import { useUiContext } from '../../src/UIProvider';
 import { Header } from '../components/header';
 import { ChoseLanguage } from './components/choseLanguage';

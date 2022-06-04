@@ -1,8 +1,8 @@
 import { StackNavigationProp } from '@react-navigation/stack';
 import { observer } from 'mobx-react';
-import React, { FC, useMemo } from 'react';
+import React, { FC, useCallback, useMemo } from 'react';
 import { Text, TouchableOpacity } from 'react-native';
-import { factsModel } from '../../../src/entities/facts/facts';
+import { factsModel } from '../../shared/entities/facts/FactsModel';
 import { useUiContext } from '../../../src/UIProvider';
 import { getStyle } from './styles';
 
@@ -15,10 +15,10 @@ export const CategoryListItem: FC<IProps> = observer(({ item, navigation }) => {
     const { colors, t } = useUiContext();
     const styles = useMemo(() => getStyle(colors), [colors]);
 
-    const onPress = () => {
-        factsModel.category = item
-        navigation.navigate('CURRENT_FACT', { facts: factsModel.facts, index: factsModel.factsByCategory })
-    }
+    const onPress = useCallback(() => {
+        factsModel.setLastIndexByCategory(item);
+        navigation.navigate('CURRENT_FACT');
+    }, []);
 
     return (
         <TouchableOpacity style={styles.container} onPress={onPress}>

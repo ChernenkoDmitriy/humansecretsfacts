@@ -5,7 +5,7 @@ import { createStackNavigator } from '@react-navigation/stack';
 import { MainScreen } from '../../modules/MainScreen';
 // import { InformationScreen } from '../../modules/InformationScreen';
 import { FactsListScreen } from '../../modules/FactsListScreen';
-import { FactScreen } from '../../modules/FactScreen';
+import { FactScreen } from '../../modules/facts/ui';
 import { SettingsScreen } from '../../modules/SettingsScreen';
 import { InformationScreen } from '../../modules/InformationScreen';
 

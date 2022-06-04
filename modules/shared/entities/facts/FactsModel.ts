@@ -1,18 +1,16 @@
-import { factsMock } from "../../../MOCKS/factsMock";
-import { IFactsMock } from "../../../MOCKS/IFactsMock";
-import { IStorage, storage } from "../../libraries/storage";
-import { MobXRepository } from "../../store/MobXRepository";
+import { factsMock } from "../../../../MOCKS/factsMock";
+import { IStorage, storage } from "../../../../src/libraries/storage";
+import { MobXRepository } from "../../../../src/store/MobXRepository";
+import { IFact } from "./IFact";
 
 export interface IFactsModel {
-
+    setLastIndexByCategory: (category: string) => void;
 }
 
 class FactsModel implements IFactsModel {
-    private currentCategoryStore = new MobXRepository<string>();
-    private factsStore = new MobXRepository<any>();
+    private factsStore = new MobXRepository<IFact[]>();
     private lastIndexStore = new MobXRepository<number>();
     private currentFactIdStore = new MobXRepository<any>('digestion1');
-
 
     constructor(private storage: IStorage) {
         this.load()
@@ -31,7 +29,7 @@ class FactsModel implements IFactsModel {
         return this.factsStore.data || factsMock;
     }
 
-    set facts(data) {
+    set facts(data: IFact[]) {
         this.storage.set('FACTS', data)
         this.factsStore.save(data)
     }
@@ -55,12 +53,7 @@ class FactsModel implements IFactsModel {
     }
 
     get lastIndex() {
-        console.log('lastIndex', this.lastIndexStore.data)
         return this.lastIndexStore.data || 0;
-    }
-
-    set category(data: string) {
-        this.currentCategoryStore.save(data)
     }
 
     set favouriteFacts(data: number) {
@@ -69,14 +62,14 @@ class FactsModel implements IFactsModel {
     }
 
     get favouriteFacts() {
-        const result = this.facts.filter((fact: IFactsMock) => fact.isFavourite);
+        const result = this.facts.filter((fact: IFact) => fact.isFavourite);
         return result
     }
 
-    get factsByCategory() {
-        const result = this.facts.findIndex((element: { category: number | null; }, index: any) => { if (element.category === this.currentCategoryStore.data) { return index - 1 } })
-        console.log(result)
-        return result
+    setLastIndexByCategory(category: string) {
+        const index = this.facts.findIndex(item => item.category === category);
+        console.log('setLastIndexByCategory ', index)
+        this.lastIndex = index;
     }
 
 }

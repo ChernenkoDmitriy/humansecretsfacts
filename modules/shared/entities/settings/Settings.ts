@@ -1,5 +1,5 @@
-import { IStorage, storage } from "../../libraries/storage";
-import { MobXRepository } from "../../store/MobXRepository";
+import { IStorage, storage } from "../../../../src/libraries/storage";
+import { MobXRepository } from "../../../../src/store/MobXRepository";
 
 export interface ISettingsModel {
     vibration: boolean;
