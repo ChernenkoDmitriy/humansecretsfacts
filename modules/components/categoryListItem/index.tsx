@@ -17,7 +17,7 @@ export const CategoryListItem: FC<IProps> = observer(({ item, navigation }) => {
 
     const onPress = useCallback(() => {
         factsModel.setLastIndexByCategory(item);
-        navigation.navigate('CURRENT_FACT');
+        navigation.navigate('CATEGORY_FACTS');
     }, []);
 
     return (

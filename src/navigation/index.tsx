@@ -1,15 +1,13 @@
 import React, { FC } from 'react';
 import { StatusBar, View } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
-import { createStackNavigator } from '@react-navigation/stack';
-import { MainScreen } from '../../modules/MainScreen';
-// import { InformationScreen } from '../../modules/InformationScreen';
-import { FactsListScreen } from '../../modules/FactsListScreen';
-import { FactScreen } from '../../modules/facts/ui';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { SettingsScreen } from '../../modules/SettingsScreen';
-import { InformationScreen } from '../../modules/InformationScreen';
+import { CategoryStack } from './categoryStack';
+import { AllFactsView } from '../../modules/facts/ui/allFactsView';
+import { FavouritesFactsView } from '../../modules/facts/ui/favouritesFactsView';
 
-const Stack = createStackNavigator();
+const Tab = createBottomTabNavigator()
 
 export const AppNavigator: FC = () => {
 
@@ -17,14 +15,12 @@ export const AppNavigator: FC = () => {
         <View style={{ backgroundColor: '#fff', flex: 1 }}>
             <StatusBar backgroundColor={'#000'} />
             <NavigationContainer theme={{ colors: {} } as any}>
-                <Stack.Navigator screenOptions={{ headerShown: false }}>
-                    <Stack.Screen name="MAIN" component={MainScreen} />
-                    <Stack.Screen name="RECENTLY_READ" component={FactScreen} />
-                    <Stack.Screen name="FAVORITES_FACTS" component={FactScreen} />
-                    <Stack.Screen name="CURRENT_FACT" component={FactScreen} />
-                    <Stack.Screen name="SETTINGS" component={SettingsScreen} />
-                    <Stack.Screen name="INFORMATION" component={InformationScreen} />
-                </Stack.Navigator>
+                <Tab.Navigator screenOptions={{ headerShown: false }}>
+                    <Tab.Screen name="CATEGORY" component={CategoryStack} />
+                    <Tab.Screen name="ALL" component={AllFactsView} />
+                    <Tab.Screen name="FAVOURITES" component={FavouritesFactsView} />
+                    <Tab.Screen name="SETTINGS" component={SettingsScreen} />
+                </Tab.Navigator>
             </NavigationContainer>
         </View>
     );

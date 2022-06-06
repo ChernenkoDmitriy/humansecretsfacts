@@ -14,7 +14,7 @@ interface IProps {
     navigation: StackNavigationProp<any>;
 }
 
-export const MainScreen: FC<IProps> = observer(({ navigation }) => {
+export const CategoryScreen: FC<IProps> = observer(({ navigation }) => {
     const { colors } = useUiContext();
     const styles = useMemo(() => getStyle(colors), [colors]);
 
@@ -32,7 +32,6 @@ export const MainScreen: FC<IProps> = observer(({ navigation }) => {
                 numColumns={2}
                 showsVerticalScrollIndicator={false}
             />
-            <BottomTabNavigator navigation={navigation} />
         </SafeAreaView>
     );
 });
