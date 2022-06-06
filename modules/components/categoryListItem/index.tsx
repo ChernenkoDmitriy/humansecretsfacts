@@ -22,7 +22,7 @@ export const CategoryListItem: FC<IProps> = observer(({ item, navigation }) => {
 
     return (
         <TouchableOpacity style={styles.container} onPress={onPress}>
-            <Text>{t(item)}</Text>
+            <Text style={styles.text}>{t(item)}</Text>
         </TouchableOpacity>
     );
 });

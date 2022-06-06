@@ -14,6 +14,9 @@ export const getStyle = (colors: IColors) => {
             justifyContent: 'center',
             margin: 10,
         },
+        text: {
+            fontFamily: 'Roboto-Black',
+        }
     });
     return styles;
 }
