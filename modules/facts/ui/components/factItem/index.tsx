@@ -9,11 +9,9 @@ import { getStyle } from './styles';
 interface IProps {
     item: any
     navigation: StackNavigationProp<any>;
-    facts: any;
-    currentViewFact: number | undefined;
 }
 
-export const FactItem: FC<IProps> = observer(({ item, currentViewFact, facts, navigation }) => {
+export const FactItem: FC<IProps> = observer(({ item, navigation }) => {
     const { colors } = useUiContext();
     const styles = useMemo(() => getStyle(colors), [colors]);
 
@@ -24,7 +22,7 @@ export const FactItem: FC<IProps> = observer(({ item, currentViewFact, facts, na
                 <TouchableOpacity onPress={navigation.goBack}>
                     <Text>{'<'}</Text>
                 </TouchableOpacity>
-                <Text>{currentViewFact}/{facts.length}</Text>
+                <Text>{factsModel.lastIndex}/{factsModel.facts.length}</Text>
                 <TouchableOpacity onPress={() => factsModel.favouriteFacts = factsModel.currentFactId}>
                     <Text>{factsModel.currentFact.isFavourite ? 'fav+' : 'fav'}</Text>
                 </TouchableOpacity>

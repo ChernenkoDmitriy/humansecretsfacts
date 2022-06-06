@@ -19,10 +19,10 @@ export const BottomTabNavigator: FC<IProps> = ({ navigation }) => {
 
     return (
         <View style={styles.container}>
-            <TouchableOpacity onPress={() => navigation.navigate('FAVORITES_FACTS', { facts: factsModel.favouriteFacts })}>
+            <TouchableOpacity onPress={() => navigation.navigate('FAVORITES_FACTS')}>
                 <Text>FAV</Text>
             </TouchableOpacity>
-            <TouchableOpacity onPress={() => navigation.navigate('RECENTLY_READ', { facts: factsModel.facts, index: factsModel.lastIndex })}>
+            <TouchableOpacity onPress={() => navigation.navigate('RECENTLY_READ')}>
                 <Text>LAST</Text>
             </TouchableOpacity>
             <TouchableOpacity onPress={() => onPress('SETTINGS')}>
