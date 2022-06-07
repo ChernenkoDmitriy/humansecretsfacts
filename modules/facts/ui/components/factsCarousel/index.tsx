@@ -19,7 +19,7 @@ export const FactCarousel: FC<IProps> = observer(({ facts, index, navigation }) 
     const flatListRef = useRef<Carousel<IFact> | null>()
 
     const renderItem = useCallback(({ item }: { item: IFact }) => (
-        <FactItem item={item} navigation={navigation} />
+        <FactItem item={item} factsLength={facts.length} />
     ), []);
 
     const onSnapToItem = (index: number) => {
