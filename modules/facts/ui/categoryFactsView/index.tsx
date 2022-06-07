@@ -3,6 +3,7 @@ import { observer } from 'mobx-react';
 import React, { FC, useMemo } from 'react';
 import { SafeAreaView } from 'react-native';
 import { useUiContext } from '../../../../src/UIProvider';
+import { Header } from '../../../components/header';
 import { factsModel } from '../../../shared/entities/facts/FactsModel';
 import { FactCarousel } from '../components/factsCarousel';
 import { getStyle } from './styles';
@@ -18,6 +19,7 @@ export const CategoryFactsView: FC<IProps> = observer(({ navigation }) => {
 
     return (
         <SafeAreaView style={styles.container}>
+            <Header title={'Category'} />
             <FactCarousel facts={factsModel.facts} index={factsModel.lastIndex} navigation={navigation} />
         </SafeAreaView >
     );

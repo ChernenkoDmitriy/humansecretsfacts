@@ -10,7 +10,6 @@ export interface IFactsModel {
 class FactsModel implements IFactsModel {
     private factsStore = new MobXRepository<IFact[]>();
     private lastIndexStore = new MobXRepository<number>();
-    private currentFactIdStore = new MobXRepository<any>('digestion1');
 
     constructor(private storage: IStorage) {
         this.load()
@@ -34,19 +33,6 @@ class FactsModel implements IFactsModel {
         this.factsStore.save(data)
     }
 
-    get currentFactId() {
-        return this.currentFactIdStore.data;
-    }
-
-    set currentFactId(data) {
-        this.currentFactIdStore.save(data)
-    }
-
-    get currentFact() {
-        const result = this.facts.find((element: { id: number }) => { if (element.id === this.currentFactId) { return element } })
-        return result
-    }
-
     set lastIndex(data: number) {
         this.lastIndexStore.save(data)
         this.storage.set('LAST_INDEX', data)
@@ -56,19 +42,8 @@ class FactsModel implements IFactsModel {
         return this.lastIndexStore.data || 0;
     }
 
-    set favouriteFacts(data: number) {
-        const setIsFavourite = this.facts.map((fact: { id: number; isFavourite: boolean; }) => fact.id === data ? { ...fact, isFavourite: !fact.isFavourite } : fact)
-        this.facts = setIsFavourite
-    }
-
-    get favouriteFacts() {
-        const result = this.facts.filter((fact: IFact) => fact.isFavourite);
-        return result
-    }
-
     setLastIndexByCategory(category: string) {
         const index = this.facts.findIndex(item => item.category === category);
-        console.log('setLastIndexByCategory ', index)
         this.lastIndex = index;
     }
 
