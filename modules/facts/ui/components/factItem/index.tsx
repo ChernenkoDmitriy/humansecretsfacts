@@ -4,7 +4,7 @@ import { ScrollView, Text, View } from 'react-native';
 import { useUiContext } from '../../../../../src/UIProvider';
 import { getStyle } from './styles';
 import { IFact } from '../../../../shared/entities/facts/IFact';
-import { UtilsBar } from '../utilsBar';
+import { FactHeader } from '../factHeader';
 
 interface IProps {
     item: IFact,
@@ -18,7 +18,7 @@ export const FactItem: FC<IProps> = observer(({ item, factsLength }) => {
     return (
         <ScrollView style={styles.container} showsVerticalScrollIndicator={false}>
             <View style={styles.image} />
-            <UtilsBar item={item} factsLength={factsLength} />
+            <FactHeader item={item} factsLength={factsLength} />
             <Text style={styles.text}>{item.text}</Text>
         </ScrollView>
     );

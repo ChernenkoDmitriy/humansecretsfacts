@@ -21,6 +21,9 @@ export const translations = {
     feelings: 'Чувства',
     health: 'Здоровье',
     interestingFacts: 'Интересные факты',
+    favourite: 'Любимые',
+    allFacts: 'Все факты',
+    category: 'Категории'
   },
   ua: {
     colorTheme: 'Схема кольорів',
@@ -44,6 +47,9 @@ export const translations = {
     feelings: 'Чувства',
     health: 'Здоровье',
     interestingFacts: 'Интересные факты',
+    favourite: 'Улюблені',
+    allFacts: 'Всі факти',
+    category: 'Категорії'
   },
   en: {
     colorTheme: 'Color theme',
@@ -67,5 +73,8 @@ export const translations = {
     feelings: 'Чувства',
     health: 'Здоровье',
     interestingFacts: 'Интересные факты',
+    favourite: 'Favourites',
+    allFacts: 'All facts',
+    category: 'Category'
   },
 };

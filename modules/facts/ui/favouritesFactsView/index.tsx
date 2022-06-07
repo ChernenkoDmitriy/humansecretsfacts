@@ -14,14 +14,14 @@ interface IProps {
 }
 
 export const FavouritesFactsView: FC<IProps> = observer(({ navigation }) => {
-    const { colors } = useUiContext();
+    const { colors, t } = useUiContext();
     const styles = useMemo(() => getStyle(colors), [colors]);
     const { getFavouriteFacts } = useFacts()
 
     return (
         <SafeAreaView style={styles.container}>
-            <Header title={'Favourite'} />
-            <FactCarousel facts={getFavouriteFacts()} index={0} navigation={navigation} />
+            <Header title={t('favourite')} />
+            <FactCarousel facts={getFavouriteFacts} index={0} navigation={navigation} />
         </SafeAreaView >
     );
 });

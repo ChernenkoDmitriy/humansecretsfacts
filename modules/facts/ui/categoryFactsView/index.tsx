@@ -14,12 +14,12 @@ interface IProps {
 }
 
 export const CategoryFactsView: FC<IProps> = observer(({ navigation }) => {
-    const { colors } = useUiContext();
+    const { colors, t } = useUiContext();
     const styles = useMemo(() => getStyle(colors), [colors]);
 
     return (
         <SafeAreaView style={styles.container}>
-            <Header title={'Category'} />
+            <Header title={t('category')} />
             <FactCarousel facts={factsModel.facts} index={factsModel.lastIndex} navigation={navigation} />
         </SafeAreaView >
     );
