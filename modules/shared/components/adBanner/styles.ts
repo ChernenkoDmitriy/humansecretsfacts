@@ -9,6 +9,7 @@ export const BUTTON_SIZE = width / 4;
 export const getStyle = (colors: IColors) => {
     const styles = StyleSheet.create({
         container: {
+            zIndex: 1,
             width: '100%',
             height: scaleVertical(60),
             backgroundColor: colors.accentColorLight

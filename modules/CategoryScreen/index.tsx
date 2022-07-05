@@ -30,6 +30,8 @@ export const CategoryScreen: FC<IProps> = observer(() => {
                 keyExtractor={keyExtractor}
                 numColumns={2}
                 showsVerticalScrollIndicator={false}
+                initialNumToRender={10}
+                style={{overflow: 'visible'}}
             />
         </SafeAreaView>
     );

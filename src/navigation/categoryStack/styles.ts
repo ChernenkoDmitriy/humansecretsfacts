@@ -11,7 +11,7 @@ export const getStyle = (colors: IColors) => {
             borderRadius: 100,
             margin: 10,
             position: 'absolute',
-            minHeight: 50
+            minHeight: 50,
         },
     });
     return styles;
