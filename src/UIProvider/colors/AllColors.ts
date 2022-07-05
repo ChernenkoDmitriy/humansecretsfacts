@@ -11,7 +11,8 @@ export const allColors = {
         subText: '#7C7C7C',
         buttonNumber: '#E68C01',
         tabBar: '#403E3E',
-        chosenButton: '#E88B94'
+        chosenButton: '#E88B94',
+        cardText: '#000000',
     },
     dark: {
         accentText: '#16BFBF',
@@ -25,6 +26,7 @@ export const allColors = {
         subText: '#CCCCCC',
         buttonNumber: '#E68C01',
         tabBar: '#403E3E',
-        chosenButton: '#E88B94'
+        chosenButton: '#E88B94',
+        cardText: '#EDEDED',
     },
 };

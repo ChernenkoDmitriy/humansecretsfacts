@@ -9,13 +9,23 @@ export const getStyle = (colors: IColors) => {
         container: {
             height: SIZE,
             width: SIZE,
-            backgroundColor: 'gray',
+            backgroundColor: colors.background,
             alignItems: 'center',
             justifyContent: 'center',
+            shadowColor: "#000",
+            shadowOffset: {
+                width: 0,
+                height: 5,
+            },
+            shadowOpacity: 0.36,
+            shadowRadius: 6.68,
+            elevation: 11,
+            borderRadius: 30,
             margin: 10,
         },
         text: {
             fontFamily: 'Roboto-Black',
+            color: colors.cardText,
         }
     });
     return styles;

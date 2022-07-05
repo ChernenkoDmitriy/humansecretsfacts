@@ -11,6 +11,7 @@ export type IColors = {
     iconColor: string;
     tabBar: string;
     chosenButton: string;
+    cardText: string;
 }
 
 export interface IColorsController {

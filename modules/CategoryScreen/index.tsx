@@ -11,14 +11,13 @@ import { CategoryListItem } from './components/categoryListItem';
 import { getStyle } from './styles';
 
 interface IProps {
-    navigation: StackNavigationProp<any>;
 }
 
-export const CategoryScreen: FC<IProps> = observer(({ navigation }) => {
+export const CategoryScreen: FC<IProps> = observer(() => {
     const { colors } = useUiContext();
     const styles = useMemo(() => getStyle(colors), [colors]);
 
-    const renderItem = ({ item }: { item: any }) => (<CategoryListItem item={item} navigation={navigation} />);
+    const renderItem = ({ item }: { item: any }) => (<CategoryListItem item={item} />);
 
     const keyExtractor = useCallback((item: string) => item, []);
 
