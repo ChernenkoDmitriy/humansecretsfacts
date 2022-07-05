@@ -10,6 +10,8 @@ export const allColors = {
         regularText: '#000000',
         subText: '#7C7C7C',
         buttonNumber: '#E68C01',
+        tabBar: '#403E3E',
+        chosenButton: '#E88B94'
     },
     dark: {
         accentText: '#16BFBF',
@@ -22,5 +24,7 @@ export const allColors = {
         regularText: '#FFFFFF',
         subText: '#CCCCCC',
         buttonNumber: '#E68C01',
+        tabBar: '#403E3E',
+        chosenButton: '#E88B94'
     },
 };
