@@ -13,6 +13,7 @@ export const allColors = {
         tabBar: '#403E3E',
         chosenButton: '#E88B94',
         cardText: '#000000',
+        chuchee: '#1D1D1B',
     },
     dark: {
         accentText: '#16BFBF',
@@ -28,5 +29,6 @@ export const allColors = {
         tabBar: '#403E3E',
         chosenButton: '#E88B94',
         cardText: '#EDEDED',
+        chuchee: '#EDEDED',
     },
 };

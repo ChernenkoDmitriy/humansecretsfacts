@@ -7,7 +7,7 @@ export const getStyle = (colors: IColors) => {
         container: {
             flex: 1,
             backgroundColor: colors.background,
-            paddingBottom: 50
+            paddingBottom: 50,
         },
     });
     return styles;

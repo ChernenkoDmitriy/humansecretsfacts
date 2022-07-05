@@ -12,6 +12,7 @@ export type IColors = {
     tabBar: string;
     chosenButton: string;
     cardText: string;
+    chuchee: string;
 }
 
 export interface IColorsController {
