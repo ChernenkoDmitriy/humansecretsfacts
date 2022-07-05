@@ -1,7 +1,7 @@
 import { StyleSheet } from 'react-native';
 import { Dimensions } from 'react-native';
-import { IColors } from '../../../src/UIProvider/colors/IColorsController';
-import { scaleVertical } from '../../../src/utils';
+import { IColors } from '../../../../src/UIProvider/colors/IColorsController';
+import { scaleVertical } from '../../../../src/utils';
 
 const { width } = Dimensions.get('screen');
 export const BUTTON_SIZE = width / 4;

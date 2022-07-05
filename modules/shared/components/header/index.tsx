@@ -1,8 +1,8 @@
 import { useNavigation } from '@react-navigation/native';
 import React, { FC, useMemo } from 'react';
 import { TouchableOpacity, View, Text } from 'react-native';
-import { useUiContext } from '../../../src/UIProvider';
-import { ArrowBackIcon } from '../../../assets/arrowBack';
+import { useUiContext } from '../../../../src/UIProvider';
+import { ArrowBackIcon } from '../../../../assets/arrowBack';
 import { getStyle } from './styles';
 
 interface IProps {

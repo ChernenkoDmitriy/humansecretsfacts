@@ -5,9 +5,9 @@ import { FlatList } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { categoryMock } from '../../MOCKS/factsMock';
 import { useUiContext } from '../../src/UIProvider';
-import { AdBanner } from '../components/adBanner';
-import { BottomTabNavigator } from '../components/bottomTabNavigator';
-import { CategoryListItem } from '../components/categoryListItem';
+import { AdBanner } from '../shared/components/adBanner';
+import { BottomTabNavigator } from '../shared/components/bottomTabNavigator';
+import { CategoryListItem } from './components/categoryListItem';
 import { getStyle } from './styles';
 
 interface IProps {

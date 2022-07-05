@@ -1,7 +1,7 @@
 import React, { FC, useMemo } from 'react';
 import { View } from 'react-native';
 // import { BannerAd, TestIds, BannerAdSize } from 'react-native-google-mobile-ads';
-import { useUiContext } from '../../../src/UIProvider';
+import { useUiContext } from '../../../../src/UIProvider';
 // import { useInterstitialAds } from '../../presenter/useInterstitialAds';
 import { getStyle } from './styles';
 
