@@ -8,7 +8,7 @@ import { ShareIcon } from '../../assets/shareIcon';
 import { VibrationIcon } from '../../assets/vibrationIcon';
 import { settingsModel } from '../shared/entities/settings/Settings';
 import { useUiContext } from '../../src/UIProvider';
-import { Header } from '../components/header';
+import { Header } from '../shared/components/header';
 import { ChoseLanguage } from './components/choseLanguage';
 import { SettingButton } from './components/settingButton';
 import { SettingButtonSwitch } from './components/settingButtonSwitch';

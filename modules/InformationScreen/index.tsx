@@ -1,7 +1,7 @@
 import React, { FC, useMemo } from 'react';
 import { ScrollView } from 'react-native-gesture-handler';
 import { useUiContext } from '../../src/UIProvider';
-import { Header } from '../components/header';
+import { Header } from '../shared/components/header';
 import { InfoBlock } from './components/infoBlock';
 import { getStyle } from './styles';
 

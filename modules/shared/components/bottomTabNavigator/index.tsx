@@ -1,8 +1,8 @@
 import { StackNavigationProp } from '@react-navigation/stack';
 import React, { FC, useMemo } from 'react';
 import { TouchableOpacity, View, Text } from 'react-native';
-import { factsModel } from '../../shared/entities/facts/FactsModel';
-import { useUiContext } from '../../../src/UIProvider'
+import { factsModel } from '../../entities/facts/FactsModel';
+import { useUiContext } from '../../../../src/UIProvider'
 import { getStyle } from './styles';
 
 interface IProps {

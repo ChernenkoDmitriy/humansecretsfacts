@@ -9,6 +9,10 @@ export type IColors = {
     borderCurrency: string;
     subText: string;
     iconColor: string;
+    tabBar: string;
+    chosenButton: string;
+    cardText: string;
+    chuchee: string;
 }
 
 export interface IColorsController {

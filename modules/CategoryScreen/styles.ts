@@ -6,13 +6,9 @@ export const getStyle = (colors: IColors) => {
     const styles = StyleSheet.create({
         container: {
             flex: 1,
+            backgroundColor: colors.background,
+            paddingBottom: 50,
         },
-        emptyItem: {
-            flex: 1,
-            height: _size.width / 2,
-            backgroundColor: 'transparent',
-            margin: 5
-        }
     });
     return styles;
 }

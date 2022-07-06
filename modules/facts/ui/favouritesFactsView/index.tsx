@@ -3,7 +3,7 @@ import { observer } from 'mobx-react';
 import React, { FC, useMemo } from 'react';
 import { SafeAreaView } from 'react-native';
 import { useUiContext } from '../../../../src/UIProvider';
-import { Header } from '../../../components/header';
+import { Header } from '../../../shared/components/header';
 import { useFacts } from '../../presenter/useFacts';
 import { FactCarousel } from '../components/factsCarousel';
 import { getStyle } from './styles';
