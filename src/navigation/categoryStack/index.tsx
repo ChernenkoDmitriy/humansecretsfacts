@@ -1,6 +1,6 @@
 import React from 'react';
 import { createStackNavigator } from '@react-navigation/stack';
-import { CategoryScreen } from '../../../modules/CategoryScreen';
+import { CategoryScreen } from '../../../modules/Categorys/ui/CategoryScreen';
 import { CategoryFactsView } from '../../../modules/facts/ui/categoryFactsView';
 
 const Stack = createStackNavigator();

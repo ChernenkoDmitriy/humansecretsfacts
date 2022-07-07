@@ -1,6 +1,5 @@
 import { StyleSheet } from 'react-native';
-import { IColors } from '../../src/UIProvider/colors/IColorsController';
-import { _size } from '../../src/utils';
+import { IColors } from '../../../../src/UIProvider/colors/IColorsController';
 
 export const getStyle = (colors: IColors) => {
     const styles = StyleSheet.create({

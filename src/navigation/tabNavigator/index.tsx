@@ -2,16 +2,16 @@ import React, { FC, useMemo } from 'react';
 import { StatusBar, View } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import { SettingsScreen } from '../../modules/SettingsScreen';
-import { CategoryStack } from './categoryStack';
-import { AllFactsView } from '../../modules/facts/ui/allFactsView';
-import { FavouritesFactsView } from '../../modules/facts/ui/favouritesFactsView';
-import { HomeIcon } from '../../assets/icons/homeIcon';
-import { useUiContext } from '../UIProvider';
-import { getStyle } from './categoryStack/styles';
-import { SettingsIcon } from '../../assets/icons/settingsIcon';
-import { StoryIcon } from '../../assets/icons/storyIcon';
-import { FavoriteIcon } from '../../assets/icons/favoriteIcon';
+import { SettingsScreen } from '../../../modules/SettingsScreen';
+import { CategoryStack } from '../categoryStack';
+import { AllFactsView } from '../../../modules/facts/ui/allFactsView';
+import { FavouritesFactsView } from '../../../modules/facts/ui/favouritesFactsView';
+import { HomeIcon } from '../../../assets/icons/homeIcon';
+import { useUiContext } from '../../UIProvider';
+import { getStyle } from './styles';
+import { SettingsIcon } from '../../../assets/icons/settingsIcon';
+import { StoryIcon } from '../../../assets/icons/storyIcon';
+import { FavoriteIcon } from '../../../assets/icons/favoriteIcon';
 
 const Tab = createBottomTabNavigator()
 
