@@ -7,11 +7,13 @@ export const getStyle = (colors: IColors) => {
             flex: 1,
         },
         tabBarStyle: {
+            // zIndex: -1,
             backgroundColor: colors.tabBar,
+            borderTopWidth: 0,
             borderRadius: 100,
             margin: 10,
             position: 'absolute',
-            minHeight: 50,
+            height: 50,
         },
     });
     return styles;

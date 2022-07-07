@@ -2,6 +2,6 @@ export interface IFact {
     id: string;
     image: null;
     text: string;
-    isFavourite: boolean;
+    isFavorite: boolean;
     category: string;
 }

@@ -1,4 +1,3 @@
-import { StackNavigationProp } from '@react-navigation/stack';
 import { observer } from 'mobx-react';
 import React, { FC, useCallback, useMemo } from 'react';
 import { FlatList } from 'react-native';
@@ -6,7 +5,6 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 import { categoryMock } from '../../../../MOCKS/factsMock';
 import { useUiContext } from '../../../../src/UIProvider';
 import { AdBanner } from '../../../shared/components/adBanner';
-import { BottomTabNavigator } from '../../../shared/components/bottomTabNavigator';
 import { CategoryListItem } from '../components/categoryListItem';
 import { getStyle } from './styles';
 
@@ -31,7 +29,8 @@ export const CategoryScreen: FC<IProps> = observer(() => {
                 numColumns={2}
                 showsVerticalScrollIndicator={false}
                 initialNumToRender={10}
-                style={{overflow: 'visible'}}
+                style={styles.flatList}
+                contentContainerStyle={{ paddingBottom: 5 }}
             />
         </SafeAreaView>
     );

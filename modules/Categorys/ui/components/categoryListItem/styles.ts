@@ -12,7 +12,7 @@ export const getStyle = (colors: IColors) => {
             backgroundColor: colors.background,
             alignItems: 'center',
             justifyContent: 'center',
-            shadowColor: "#000",
+            shadowColor: colors.shadow,
             shadowOffset: {
                 width: 0,
                 height: 5,
