@@ -11,8 +11,8 @@ export const getStyle = (colors: IColors) => {
             marginTop: 25,
         },
         icon: {
-            width: 140,
-            height: 200,
+            width: 210,
+            height: 280,
         },
         name: {
             position: 'absolute',
