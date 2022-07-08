@@ -4,15 +4,23 @@ import { IColors } from '../../../../src/UIProvider/colors/IColorsController';
 export const getStyle = (colors: IColors) => {
     const styles = StyleSheet.create({
         container: {
+            zIndex: 2,
             flex: 1,
             justifyContent: 'center',
             alignItems: 'center',
-            marginTop: 66,
+            marginTop: 25,
         },
         icon: {
             width: 140,
             height: 200,
+        },
+        name: {
+            position: 'absolute',
+            overflow: 'hidden',
+            justifyContent: 'center',
+            alignItems: 'center',
         }
     });
+
     return styles;
-}
+};

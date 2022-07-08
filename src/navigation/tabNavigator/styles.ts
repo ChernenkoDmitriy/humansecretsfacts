@@ -1,17 +1,18 @@
 import { StyleSheet } from 'react-native';
 import { IColors } from '../../UIProvider/colors/IColorsController';
 
-export const getStyle = (colors: IColors) => {
+export const getStyle = (colors: IColors, isLoaded: boolean) => {
     const styles = StyleSheet.create({
         container: {
             flex: 1,
         },
         tabBarStyle: {
+            zIndex: isLoaded ? 1 : -1,
             backgroundColor: colors.tabBar,
             borderRadius: 100,
             margin: 10,
             position: 'absolute',
-            minHeight: 50,
+            height: 50,
         },
     });
     return styles;
