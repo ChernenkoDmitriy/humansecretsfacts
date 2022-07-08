@@ -1,6 +1,6 @@
 import { StyleSheet } from 'react-native';
-import { IColors } from '../../../../src/UIProvider/colors/IColorsController';
-import { _size } from '../../../../src/utils';
+import { IColors } from '../../../../../src/UIProvider/colors/IColorsController';
+import { _size } from '../../../../../src/utils';
 
 const SIZE = _size.width / 2 - 20;
 
@@ -12,7 +12,7 @@ export const getStyle = (colors: IColors) => {
             backgroundColor: colors.background,
             alignItems: 'center',
             justifyContent: 'center',
-            shadowColor: "#000",
+            shadowColor: colors.shadow,
             shadowOffset: {
                 width: 0,
                 height: 5,

@@ -1,9 +1,9 @@
 import React from 'react';
 import { createStackNavigator, StackNavigationOptions } from '@react-navigation/stack';
-import { CategoryScreen } from '../../../modules/CategoryScreen';
 import { CategoryFactsView } from '../../../modules/facts/ui/categoryFactsView';
 import { LoadScreen } from '../../../modules/load/ui/loadScreen';
 import { TransitionSpec } from '@react-navigation/stack/lib/typescript/src/types';
+import { CategoryScreen } from '../../../modules/Categorys/ui/CategoryScreen';
 
 const Stack = createStackNavigator();
 

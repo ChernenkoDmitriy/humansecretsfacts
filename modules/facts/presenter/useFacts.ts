@@ -4,15 +4,15 @@ import { IFact } from "../../shared/entities/facts/IFact";
 
 export const useFacts = () => {
 
-    const getFavouriteFacts = useMemo(() => {
-        const result = factsModel.facts.filter((fact: IFact) => fact.isFavourite);
+    const getFavoriteFacts = useMemo(() => {
+        const result = factsModel.facts.filter((fact: IFact) => fact.isFavorite);
         return result
     }, [factsModel.facts])
 
-    const setFavouriteFacts = useCallback((id: string) => {
-        const setIsFavourite = factsModel.facts.map((fact: IFact) => fact.id === id ? { ...fact, isFavourite: !fact.isFavourite } : fact)
-        factsModel.facts = setIsFavourite
+    const setFavoriteFacts = useCallback((id: string) => {
+        const setIsFavorite = factsModel.facts.map((fact: IFact) => fact.id === id ? { ...fact, isFavorite: !fact.isFavorite } : fact)
+        factsModel.facts = setIsFavorite
     }, [])
 
-    return { getFavouriteFacts, setFavouriteFacts };
+    return { getFavoriteFacts, setFavoriteFacts };
 }

@@ -10,17 +10,16 @@ import { getStyle } from './styles';
 
 
 interface IProps {
-    navigation: StackNavigationProp<any>;
 }
 
-export const AllFactsView: FC<IProps> = observer(({ navigation }) => {
+export const AllFactsView: FC<IProps> = observer(() => {
     const { colors, t } = useUiContext();
     const styles = useMemo(() => getStyle(colors), [colors]);
 
     return (
         <SafeAreaView style={styles.container}>
-            <Header title={t('allFacts')} />
-            <FactCarousel facts={factsModel.facts} index={factsModel.lastIndex} navigation={navigation} />
+            <Header title={t('allFacts')}/>
+            <FactCarousel facts={factsModel.facts} index={0} />
         </SafeAreaView >
     );
 });

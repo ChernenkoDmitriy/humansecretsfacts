@@ -13,6 +13,9 @@ export type IColors = {
     chosenButton: string;
     cardText: string;
     chuchee: string;
+    shadow: string;
+    header: string;
+    headerText: string;
 }
 
 export interface IColorsController {
