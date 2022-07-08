@@ -1,5 +1,4 @@
 import React from "react";
-import { StackNavigationProp } from "@react-navigation/stack";
 import { observer } from "mobx-react";
 import { FC, useCallback, useRef } from "react";
 import Carousel from "react-native-snap-carousel";
@@ -10,17 +9,17 @@ import { FactItem } from "../factItem"
 
 
 interface IProps {
-    navigation: StackNavigationProp<any>
     facts: IFact[];
     index: number;
 }
 
-export const FactCarousel: FC<IProps> = observer(({ facts, index, navigation }) => {
+export const FactCarousel: FC<IProps> = observer(({ facts, index }) => {
     const flatListRef = useRef<Carousel<IFact> | null>()
 
     const renderItem = useCallback(({ item }: { item: IFact }) => (
         <FactItem item={item} factsLength={facts.length} />
     ), []);
+
 
     const onSnapToItem = (index: number) => {
         factsModel.lastIndex = index;

@@ -17,7 +17,7 @@ export const Header: FC<IProps> = ({ title }) => {
     return (
         <View style={styles.container}>
             <TouchableOpacity style={styles.button} onPress={navigation.goBack}>
-                <ArrowBackIcon width={24} height={24} color={colors.iconColor} />
+                <ArrowBackIcon width={24} height={24} color={colors.regularText} />
             </TouchableOpacity>
             <View style={styles.textWrapper}>
                 <Text numberOfLines={1} style={styles.title}>{title}</Text>

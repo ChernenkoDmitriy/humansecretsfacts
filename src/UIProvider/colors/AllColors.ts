@@ -14,6 +14,9 @@ export const allColors = {
         chosenButton: '#E88B94',
         cardText: '#000000',
         chuchee: '#1D1D1B',
+        shadow: '#000000',
+        header: '#eeeeee78',
+        headerText: "#FEFBF9",
     },
     dark: {
         accentText: '#16BFBF',
@@ -30,5 +33,8 @@ export const allColors = {
         chosenButton: '#E88B94',
         cardText: '#EDEDED',
         chuchee: '#EDEDED',
+        shadow: '#000000',
+        header: '#3e3e4191',
+        headerText: "#FEFBF9",
     },
 };

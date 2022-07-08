@@ -19,8 +19,7 @@ export const CategoryFactsView: FC<IProps> = observer(({ navigation }) => {
 
     return (
         <SafeAreaView style={styles.container}>
-            <Header title={t('category')} />
-            <FactCarousel facts={factsModel.facts} index={factsModel.lastIndex} navigation={navigation} />
+            <FactCarousel facts={factsModel.facts} index={factsModel.lastIndex} />
         </SafeAreaView >
     );
 });
