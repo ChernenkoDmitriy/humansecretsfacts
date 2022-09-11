@@ -12,12 +12,14 @@ import { SettingsIcon } from '../../../assets/icons/settingsIcon';
 import { StoryIcon } from '../../../assets/icons/storyIcon';
 import { FavoriteIcon } from '../../../assets/icons/favoriteIcon';
 import { FavoritesFactsView } from '../../../modules/facts/ui/favoritesFactsView';
+import { appState } from '../../../modules/shared/entities/appState/AppStateController';
+import { observer } from 'mobx-react';
 
 const Tab = createBottomTabNavigator()
 
-export const AppNavigator: FC = () => {
+export const AppNavigator: FC = observer(() => {
     const { colors, theme } = useUiContext();
-    const styles = useMemo(() => getStyle(colors), [colors]);
+    const styles = useMemo(() => getStyle(colors, appState.isLoaded), [colors, appState.isLoaded]);
 
     const barStyle = useMemo(() => theme === 'light' ? 'dark-content' : 'light-content', [theme]);
 
@@ -34,4 +36,4 @@ export const AppNavigator: FC = () => {
             </NavigationContainer>
         </View>
     );
-}
+});
